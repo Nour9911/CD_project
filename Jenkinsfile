@@ -8,7 +8,7 @@ pipeline {
             branches: [[name: '*/main' ]],
             userRemoteConfigs: [[
             url: 'https://github.com/Nour9911/MyApp.git',
-            credentialsId: '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'
+            credentialsId: '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'
             ]]
             ])
           }
