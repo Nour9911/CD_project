@@ -1,8 +1,17 @@
 ---
 # tasks file for build
+<<<<<<< HEAD
 # #installnodemudoles
                  - name: install node modules
                    shell: npm install
 #buidproject
                  - name: build app
                    shell: ng build --configuration production
+=======
+#installnodemudoles
+                - name: install node modules
+                  shell: npm install
+#buidproject
+                - name: build app
+                  shell: ng build --configuration production
+>>>>>>> origin
