@@ -4,7 +4,7 @@
   docker_image:
    name: devops
    build:
-   path: /var/lib/jenkins/workspace/pipelineangular
+   path: /var/lib/jenkins/workspace/pipelineangular@tmp
    pull: no
    source: build
    state: present
