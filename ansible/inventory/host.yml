@@ -1,9 +1,8 @@
-
-localhost ansible_connection=local
+192.168.1.50 ansible_connection=local
 
 [Server]
-localhost
+192.168.1.50
 
 [Server:vars]
-ansible_python_interpreter= /usr/bin/python3
-ansi_user= root
+ansible_python_interpreter = /usr/bin/python3
+ansi_user =  jenkins
