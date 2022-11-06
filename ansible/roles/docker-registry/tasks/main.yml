@@ -1,8 +1,8 @@
 - name: log into docker hub registy
   docker_login:
-    email: nourmrad171199@gmail.com
     username: 11711911
     password: dckr_pat_BTkhAO3fpvUDF8jZ7Zy-L6_Hmpc
+    email: nourmrad171199@gmail.com
 - name: Tag and push to docker hub
   docker_image:
     name: devops
