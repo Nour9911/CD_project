@@ -35,7 +35,13 @@ pipeline {
                     sh 'ansible-playbook -K ansible/docker-registry.yml -i ansible/inventory/host.yml'
                 }
             }
-        } 
+        }
+
+                        stage("Deployment with kubernetes replicas") {
+                steps{
+                    sh 'kubectl create -f deployment.yml'
+                }
+             } 
 
   }
 }
