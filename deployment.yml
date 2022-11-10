@@ -12,6 +12,7 @@ spec:
       labels:
         app: devops
     spec:
+      serviceAccountName: jenkins
       containers:
         - name: devops
           image: 11711911/devops
