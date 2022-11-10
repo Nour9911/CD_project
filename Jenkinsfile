@@ -39,7 +39,7 @@ pipeline {
 
                         stage("Deployment with kubernetes replicas") {
                 steps{
-                    sh 'kubectl create -f deployment.yml'
+                    sh 'kubectl create -f deployment.yml --context mycluster'
                 }
              } 
 
