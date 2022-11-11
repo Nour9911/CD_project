@@ -10,7 +10,11 @@ scrape_configs:
  - job_name: docker
    scrape_interval: 5s
    static_configs:
-     - targets: ['192.168.1.50:9323']                                         
+     - targets: ['192.168.1.50:9323']
+  - job_name: jenkins
+    metrics_path: /prometheus
+    static_configs:
+      - targets: ['192.168.1.50:8080']    
  - job_name: myapp
    scrape_interval: 5s
    static_configs:
