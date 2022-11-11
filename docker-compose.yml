@@ -44,5 +44,5 @@ services:
     depends_on:
     - prometheus
     - cadvisor
-  volumes:
-    grafana-data:
+volumes:
+  grafana-data:
