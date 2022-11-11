@@ -7,14 +7,10 @@ scrape_configs:
        - node-exporter:9100
        - pushgateway:9091
        - cadvisor:8080
- - job_name: docker
-   scrape_interval: 5s
-   static_configs:
-     - targets: ['192.168.1.50:9323']
-  - job_name: jenkins
-    metrics_path: /prometheus
-    static_configs:
-      - targets: ['192.168.1.50:8080']    
+   - job_name: Docker Job
+     metrics_path: /metrics
+     static_configs:
+       - targets: ['192.168.1.50:9999']   
  - job_name: myapp
    scrape_interval: 5s
    static_configs:
