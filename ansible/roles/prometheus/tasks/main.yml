@@ -1,5 +1,4 @@
 ---
-# tasks file for prometheus
 - name: run container prometheus
   prometheus_container:
    name: prometheus

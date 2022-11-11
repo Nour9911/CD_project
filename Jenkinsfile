@@ -37,27 +37,13 @@ pipeline {
             }
         }
  
- stage("prometheus") {
+ stage("Monitoring") {
             steps {
                 script{
-                    sh 'ansible-playbook -K ansible/prometheus.yml -i ansible/inventory/host.yml'
+                    sh 'docker-compose up -d'
                 }
             }
-        }
-stage("grafana") {
-            steps {
-                script{
-                    sh 'ansible-playbook -K ansible/grafana.yml -i ansible/inventory/host.yml'
-                }
-            }
-        }
-stage("node exporter") {
-            steps {
-                script{
-                    sh 'ansible-playbook -K ansible/node-exporter.yml -i ansible/inventory/host.yml'
-                }
-            }
-        }
+        } 
 
   }
 }
