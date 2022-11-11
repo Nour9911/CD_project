@@ -1,0 +1,10 @@
+---
+# tasks file for prometheus
+- name: run container prometheus
+  prometheus_container:
+   name: prometheus
+   image: prom/prometheus:latest
+   state: started
+   recreate: true
+   ports:
+    - "9090:9090"

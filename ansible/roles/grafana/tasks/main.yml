@@ -1,0 +1,10 @@
+---
+# tasks file for grafana
+- name: run container grafana
+  grafana_container:
+   name: grafana
+   image: grafana/grafana:latest
+   state: started
+   recreate: true
+   ports:
+    - "3000:3000"

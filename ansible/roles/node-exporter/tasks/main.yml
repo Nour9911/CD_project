@@ -1,0 +1,10 @@
+---
+# tasks file for node-exporter
+- name: run container node-exporter
+  node_exporter_container:
+   name: node_exporter
+   image: prom/node-exporter:latest
+   state: started
+   recreate: true
+   ports:
+    - "9100:9100"

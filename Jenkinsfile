@@ -36,12 +36,28 @@ pipeline {
                 }
             }
         }
-
-                        stage("Deployment with kubernetes replicas") {
-                steps{
-                    sh 'kubectl --token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImxJcTA4OVZMVS00Mk16MVo0Sk41eU5fZUx6QlBMUkZMVzNNdVNMdnF0S28ifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNjY4MTAzNTA3LCJpYXQiOjE2NjgwOTk5MDcsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImplbmtpbnMiLCJ1aWQiOiJmZDE4MjI1ZS00NjM0LTQ3ZjEtOTIzOS0xMDQ1MmY2NTgzNDMifX0sIm5iZiI6MTY2ODA5OTkwNywic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6amVua2lucyJ9.Tmg9uuEYRbN-xcGnMpoICIZ_xPg5WIgdujLPtOi6N8YsE66ZZW2lxyESlvCEsm4QnT8MgFVCn0xdw02lWQbRTO0513UUV-FKDjX_LzZ7AhWflhadsXiyPvVF8dGGnNBDYkzhLCfAgCVo_copNmI3rGXupyDYGmy9GvKpuTvLa_J0pKGBHOnmmUrcOe96-YXda_M8gFKEde-56YTGv5qO7HCIy48zQiXzib7ytFsX1cjbx7vwRfGjtsNNBmke8q8txHZE1uS3CNXPolcpZUu7AgecYfbobZDDop5TDZykuCd2pnmyhrlEypG4mDGrXHLoNdR76Y6VBvo80WzryjjyxQ create -f deployment.yml'
+ 
+ stage("prometheus") {
+            steps {
+                script{
+                    sh 'ansible-playbook -K ansible/prometheus.yml -i ansible/inventory/host.yml'
                 }
-             } 
+            }
+        }
+stage("grafana") {
+            steps {
+                script{
+                    sh 'ansible-playbook -K ansible/grafana.yml -i ansible/inventory/host.yml'
+                }
+            }
+        }
+stage("node exporter") {
+            steps {
+                script{
+                    sh 'ansible-playbook -K ansible/node-exporter.yml -i ansible/inventory/host.yml'
+                }
+            }
+        }
 
   }
 }
