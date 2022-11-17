@@ -18,21 +18,21 @@ pipeline {
     stage("Build") {
       steps {
         script{
-          sh "ansible-playbook -K ansible/build.yml -i ansible/inventory/host.yml"
+          sh "ansible-playbook -K ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=nour123"
               }
             }
         }
    stage("docker") {
             steps {
                 script{
-                    sh 'ansible-playbook -K ansible/docker.yml -i ansible/inventory/host.yml'
+                    sh 'ansible-playbook -K ansible/docker.yml -i ansible/inventory/host.yml -e ansible_become_password=nour123'
                 }
             }
         }
                        stage("docker-registry") {
             steps {
                 script{
-                    sh 'ansible-playbook -K ansible/docker-registry.yml -i ansible/inventory/host.yml'
+                    sh 'ansible-playbook -K ansible/docker-registry.yml -i ansible/inventory/host.yml -e ansible_become_password=nour123'
                 }
             }
         }
