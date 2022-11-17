@@ -10,12 +10,12 @@ scrape_configs:
  - job_name: Docker Job
    metrics_path: /metrics
    static_configs:
-     - targets: ['192.168.1.50:9999']   
+     - targets: ['139.162.239.97:9999']   
  - job_name: myapp
    scrape_interval: 5s
    static_configs:
-     - targets: ['192.168.1.50:4200']
+     - targets: ['139.162.239.97:4200']
  - job_name: jenkins
    metrics_path: /prometheus
    static_configs:
-     - targets: ['192.168.1.50:8080']
+     - targets: ['139.162.239.97:8080']
