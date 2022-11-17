@@ -6,4 +6,4 @@
 [Server:vars]
 ansible_python_interpreter = /usr/bin/python3
 ansi_user =  jenkins
-ansi_password = nour123
+ansible_password: nour123
