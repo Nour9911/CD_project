@@ -18,7 +18,7 @@ pipeline {
     stage("Build") {
       steps {
         script{
-          sh "ansible-playbook -Kk ansible/build.yml -i ansible/inventory/host.yml"
+          sh "ansible-playbook -Kk ansible/build.yml -i ansible/inventory/host.yml --extra-vars ansible_password=nour123"
               }
             }
         }
