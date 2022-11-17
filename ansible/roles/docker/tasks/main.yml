@@ -1,9 +1,9 @@
 ---
 - name: create image docker
   docker_image:
-   name: devops
+   name: devopscloud
    build: 
-    path: /var/lib/jenkins/workspace/pipelineangular
+    path: /var/lib/jenkins/workspace/devops
     pull: no
    source: build
    state: present
@@ -11,7 +11,7 @@
 - name: run container docker
   docker_container:
    name: myapp_container
-   image: devops:latest
+   image: devopscloud:latest
    state: started
    recreate: true
    ports:
