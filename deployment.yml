@@ -6,13 +6,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: devops
+      app: devopscloud
   template:
     metadata:
       labels:
-        app: devops
+        app: devopscloud
     spec:
       serviceAccountName: jenkins
       containers:
-        - name: devops
-          image: 11711911/devops
+        - name: devopscloud
+          image: 11711911/devopscloud
