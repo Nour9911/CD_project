@@ -3,7 +3,7 @@
   docker_image:
    name: devopscloud
    build: 
-    path: /var/lib/jenkins/workspace/devops
+    path: /var/lib/jenkins/workspace/devopscloud
     pull: no
    source: build
    state: present
